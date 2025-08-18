@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../shared/assets/LOGOTYPE – BILETICK (2).svg";
 import { FaCloudMoon } from "react-icons/fa";
@@ -11,23 +11,29 @@ import { AiOutlineBars } from "react-icons/ai";
 
 const Header = () => {
   const [theme, seTheme] = useState(
-    localStorage.getItem("togleMode") || "dark"
+    localStorage.getItem("togleMode") || "ligth"
   );
 
-  const hendleMode = () => {
-    localStorage.getItem("togleMode") === "dark"
-      ? localStorage.setItem("togleMode", "ligth")
-      : localStorage.setItem("togleMode", "dark");
-    seTheme(localStorage.getItem("togleMode") || "dark");
-
-    if (localStorage.getItem("togleMode") === "dark") {
+  useEffect(() => {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
       document.body.style.background = "black";
     } else {
       document.documentElement.classList.remove("dark");
       document.body.style.background = "white";
     }
+  }, [theme]);
+
+  const handleMode = () => {
+    if (theme === "dark") {
+      localStorage.setItem("togleMode", "light");
+      seTheme("light");
+    } else {
+      localStorage.setItem("togleMode", "dark");
+      seTheme("dark");
+    }
   };
+
   return (
     <header className="dark:bg-gray-950">
       <div className="continer  flex justify-between items-center px-[16px] py-[10px] pb-[30px] pt-[20px]">
@@ -95,7 +101,7 @@ const Header = () => {
             Войти
           </button>
 
-          <div className="mx-[10px]" onClick={() => hendleMode()}>
+          <div className="mx-[10px]" onClick={() => handleMode()}>
             <span className="font-bold text-[25px] cursor-pointer dark:text-white">
               {theme == "dark" ? <GoSun /> : <FaCloudMoon />}
             </span>
