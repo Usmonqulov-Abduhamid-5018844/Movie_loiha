@@ -23,29 +23,32 @@ const MovieDetail = () => {
     </div>
   }
   return (
-    <div className="container mx-auto">
-      <div>
+    <div className="dark:text-white">
+      <div className='continer'>
         <img src={`${IMAGE_URL}${data?.backdrop_path}`} alt="" />
       </div>
-      <div>
+      <div className='continer py-3'>
         <h1 className='text-3xl font-bold'>{data?.title}</h1>
         <strong>{data?.budget?.toLocaleString()} USD</strong>
       </div>
-      <div className='flex flex-wrap'>
+      <div className='continer flex-wrap flex gap-4 justify-between mb-[50px]'>
         {
           imagesData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
             <img loading='lazy'  key={inx} src={IMAGE_URL + item.file_path} width={180} alt="" />
           ))
         }
       </div>
-      <div className='flex flex-wrap'>
+      <h1 className='continer'>Aktior</h1>
+      <div className='flex flex-wrap continer  gap-5 justify-between mb-[50px]'>
         {
           creditsData?.cast?.map((user: any) => {
             const image = user.profile_path ? IMAGE_URL + user.profile_path : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png"
             return <div key={user.id}>
-              <img loading='lazy' src={image} width={80} alt="" />
+              <div>
+                <img loading='lazy' src={image} className='w-[150px]' alt="" />
+              </div>
               <h3>{user.name}</h3>
-              <p className='text-gray-500'>{user.character}</p>
+              <p title={user.character} className='text-gray-500 truncate w-[150px]'>{user.character}</p>
             </div>
         })
         }
