@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useMovieDetail } from './services/useMovieDetail';
 import { IMAGE_URL } from '../../shared/const';
 import MovieView from '../../shared/components/movie-view/MovieView';
+import { Image } from 'antd';
 
 const MovieDetail = () => {
   const {id} = useParams()
@@ -34,11 +35,11 @@ const MovieDetail = () => {
       <div className='continer flex-wrap flex gap-4 justify-between mb-[50px]'>
         {
           imagesData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
-            <img loading='lazy'  key={inx} src={IMAGE_URL + item.file_path} width={180} alt="" />
+            <Image loading='lazy'  key={inx} src={IMAGE_URL + item.file_path} width={180} alt=""/>
           ))
         }
       </div>
-      <h1 className='continer'>Aktior</h1>
+      <h1 className='continer'>Actors</h1>
       <div className='flex flex-wrap continer  gap-5 justify-between mb-[50px]'>
         {
           creditsData?.cast?.map((user: any) => {

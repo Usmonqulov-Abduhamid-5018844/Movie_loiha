@@ -89,7 +89,7 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-4 ">
           <select
-            className="bg-[#0E0E0E] text-white w-[80px] h-[40px] rounded-[12px] px-1 outline-none max-[650px]:hidden"
+            className="dark:bg-[#0E0E0E] dark:text-white text-shadow-black w-[80px] h-[40px] rounded-[12px] px-1 outline-none max-[650px]:hidden"
             name="language"
             id=""
           >

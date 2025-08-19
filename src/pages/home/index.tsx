@@ -16,13 +16,13 @@ const Home = () => {
           {
             data?.results?.splice(0,8).map((movie: any, index: number)=>(
                <div key={index} className='rounded-2xl overflow-hidden'>
-                        <div onClick={()=> navigate(`/movie/${movie.id}`)}>
+                        <div onClick={()=> navigate(`/movie/${movie.id}`)} className='relative'>
                             <img loading='lazy' src={`${IMAGE_URL}${movie.poster_path}`} alt={movie.title} />
+                            <p className='text-[26px] absolute font-bold dark:text-gray-400 top-1.5 left-2 text-red-400'>{movie.release_date.split("-")[0]}</p>
                         </div>
                         <div className='p-2 dark:text-white'>
                             <h3 className='font-bold text-xl line-clamp-1' title={movie.title}>{movie.title}</h3>
-                            <p className='text-[20px]'> year: {movie.release_date}</p>
-                            <p>⭐ {movie.vote_average}</p>
+                            <p>{movie.vote_average}</p>
                         </div>
                     </div>
             ))

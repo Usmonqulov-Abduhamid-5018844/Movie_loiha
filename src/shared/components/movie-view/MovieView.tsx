@@ -18,13 +18,13 @@ const MovieView:FC<Props> = ({data}) => {
             {
                 data?.map((movie:any) => (
                     <div key={movie.id} className='rounded-2xl overflow-hidden'>
-                        <div onClick={()=> navigate(`/movie/${movie.id}`)}>
+                        <div onClick={()=> navigate(`/movie/${movie.id}`)} className='relative'>
+                            <p className='text-[24px] absolute dark:text-gray-200 text-white font-bold top-1.5 left-2'> {movie.release_date.split("-")[0]}</p>
                             <img loading='lazy' src={`${IMAGE_URL}${movie.poster_path}`} alt={movie.title} />
                         </div>
                         <div className='p-2 dark:text-white'>
                             <h3 className='font-bold text-xl line-clamp-1' title={movie.title}>{movie.title}</h3>
-                            <p className='text-[20px]'> year: {movie.release_date}</p>
-                            <p>⭐ {movie.vote_average}</p>
+                            <p> {movie.vote_average}</p>
                         </div>
                     </div>
                 ))

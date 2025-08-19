@@ -9,7 +9,6 @@ const Hero = () => {
  const data = getMovies().data
  const navigate = useNavigate()
 
-console.log(data);
   return (
 <div className="scrol-bar continer_lg flex overflow-x-auto space-x-4">
   {data?.results?.slice(0, 5).map((item: any, index: number) => (
