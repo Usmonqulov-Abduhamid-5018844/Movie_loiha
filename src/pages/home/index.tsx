@@ -14,7 +14,7 @@ const Home = () => {
       <Hero/>
       <div className='continer grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 px-[16px] mt-[80px]'>
           {
-            data?.results?.splice(0,8).map((movie: any, index: number)=>(
+            data?.results?.slice(0,8).map((movie: any, index: number)=>(
                <div key={index} className='rounded-2xl overflow-hidden'>
                         <div onClick={()=> navigate(`/movie/${movie.id}`)} className='relative'>
                             <img loading='lazy' src={`${IMAGE_URL}${movie.poster_path}`} alt={movie.title} />

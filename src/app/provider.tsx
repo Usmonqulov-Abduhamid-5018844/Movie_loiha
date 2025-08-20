@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from './store';
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
+import Loading from '../shared/loading';
 
 const client = new QueryClient({
   defaultOptions: {
@@ -17,7 +18,7 @@ const AppProvider = ({children}:{children:ReactNode}) => {
     <BrowserRouter>
         <Provider store={store}>
             <QueryClientProvider client={client}>
-                <Suspense fallback={<div>Suspense Loading...</div>}>
+                <Suspense fallback={<Loading/>}>
                     {children}
                 </Suspense>
             </QueryClientProvider>
