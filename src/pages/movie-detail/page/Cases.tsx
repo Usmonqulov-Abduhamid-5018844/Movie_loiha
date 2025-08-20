@@ -14,6 +14,7 @@ const Cases = () => {
 
   const hendleShow = ()=>{
     setShowpage((p)=> p += 14)
+    
   }
   const clousPage = ()=> {
         setShowpage((p)=> p = 7)
