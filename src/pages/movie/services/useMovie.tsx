@@ -6,8 +6,8 @@ export const movieKey = "movieKey";
 interface Iparams {
   page?: string;
   with_genres?: string;
-  "relase_data_gte"?: string;
-  "relase_data_lte"?: string;
+  "release_date.gte"?: string;
+  "release_date.lte"?: string;
 }
 
 export const useMovie = () => {

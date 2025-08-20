@@ -17,7 +17,7 @@ import youtub from "../../shared/assets/footer-icon/youtube-line.png"
 
 const Footer = () => {
   return (
-  <footer className="dark:bg-[#111111] dark:text-white">
+  <footer className="dark:bg-[#111111] dark:text-white bg-black/4">
       <div className="continer mt-[40px] py-[20px] flex justify-between px-[10px] max-[850px]:grid max-[850px]:grid-cols-2 max-[850px]:gap-10 max-[850px]:pl-[50px]">
       <div className="flex flex-col gap-5">
         <Link to={"/"}> 
