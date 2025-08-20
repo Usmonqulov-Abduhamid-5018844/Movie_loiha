@@ -16,9 +16,6 @@ const Cases = () => {
     setShowpage((p)=> p += 14)
     
   }
-  const clousPage = ()=> {
-        setShowpage((p)=> p = 7)
-  }
 
   return (
     <div className="Cases">
@@ -54,7 +51,7 @@ const Cases = () => {
         <Button  onClick={hendleShow} type="primary">
              Next page
         </Button>
-        <Button  onClick={clousPage} type="primary">
+        <Button  onClick={()=> setShowpage((p)=> p = 7)} type="primary">
              Clous page
         </Button>
       </div>
