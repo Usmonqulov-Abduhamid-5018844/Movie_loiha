@@ -10,9 +10,7 @@ const MovieDetail = () => {
   const {getMovieById, getMovieItems} = useMovieDetail()
   const {data, isLoading} = getMovieById(id || "")
   const {data: imagesData} = getMovieItems(id || "", "images")
-  const {data: creditsData} = getMovieItems(id || "", "credits")
 
-  console.log(creditsData);
   
 
   if(isLoading){
@@ -38,7 +36,7 @@ const MovieDetail = () => {
           ))
         }
       </div>
-      <div className='continer flex gap-4 border-b-2 border-gray-300 py-3 text-[20px] mb-[30px]'>
+      <div className='continer flex gap-4 border-b-2 dark:border-gray-500 border-gray-300 py-3 text-[20px] mb-[30px]'>
       <NavLink end={true} className={({isActive})=> isActive ? "text-red-400 border-b-2" : ""} to={""}>Cest</NavLink>
       <NavLink className={({isActive})=> isActive ? "text-red-400 border-b-2" : ""} to={"crew"}>Crew</NavLink>
       </div>

@@ -11,7 +11,7 @@ const MovieView:FC<Props> = ({data, option}) => {
     const navigate = useNavigate()
   return (
     <div className="continer">
-        <div className={`${option ? "flex overflow-x-auto px-[16px] gap-4 scrol-bar" :"grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 px-[16px]"}`}>
+        <div className={`${option ? "flex overflow-x-auto px-[16px] gap-4 scrol-bar" :"grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 "}`}>
             {
                 data?.map((movie:any) => (
                     <div key={movie.id} className={`${option ? "min-w-[300px]": "rounded-2xl overflow-hidden"}`}>
