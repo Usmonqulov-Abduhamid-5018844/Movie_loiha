@@ -13,7 +13,7 @@ const Cases = () => {
   const { data: similarData, isLoading } = getMovieItems(id || "", "similar");
 
   const hendleShow = ()=>{
-    setShowpage((p)=> p += 14)
+    setShowpage((p)=> p + 14)
     
   }
 
@@ -51,7 +51,7 @@ const Cases = () => {
         <Button  onClick={hendleShow} type="primary">
              Next page
         </Button>
-        <Button  onClick={()=> setShowpage((p)=> p = 7)} type="primary">
+        <Button  onClick={()=> setShowpage(7)} type="primary">
              Clous page
         </Button>
       </div>
