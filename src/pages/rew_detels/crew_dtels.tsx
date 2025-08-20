@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 const Crew_dtels = () => {
-  const  {id} = useParams()
+  // const  {id} = useParams()
   return (
     <div className="Crew_dtels">
       <h2>Crew_dtels</h2>
