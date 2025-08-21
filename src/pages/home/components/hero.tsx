@@ -29,12 +29,11 @@ const Hero:FC<Props> = ({data}) => {
       className="flex-shrink-0 w-[1200px] h-[600px] relative max-[1000px]:w-[900px] max-[1000px]:h-[450px] max-[700px]:w-[550px] max-[700]:h-[400px]"
     >
       <img
-      onClick={()=> navigate(`/movie/${item.id}`)}
         src={`${IMAGE_URL}${item.backdrop_path}`}
         alt={item.title}
         className="w-full h-full "
       />
-      <div  onClick={()=> navigate(`/movie/${item.id}`)} className='absolute bg-black/30 w-full text-white pb-[20px] flex flex-col items-center bottom-1 left-1/2 -translate-x-1/2 font-bold text-[30px]'>
+      <div  className='absolute bg-black/30 w-full text-white pb-[20px] flex flex-col items-center bottom-1 left-1/2 -translate-x-1/2 font-bold text-[30px]'>
          <div>
            <h1>{item.title}</h1>
          </div>
@@ -45,7 +44,7 @@ const Hero:FC<Props> = ({data}) => {
           <p  className='text-[18px] text-gray-300'>14+</p>
           </div>
           <div className='mt-[10px]'>
-            <Button className='w-[400px]' type='dashed' style={{height: "50px"}}>
+            <Button onClick={()=> navigate(`/movie/${item.id}`)} className='w-[400px]' type='dashed' style={{height: "50px"}}>
               <img src={herobuttonImg} alt="" />
               Смотреть
             </Button>
