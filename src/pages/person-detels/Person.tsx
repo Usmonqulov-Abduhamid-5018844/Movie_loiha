@@ -13,7 +13,6 @@ const Person = () => {
   const { data: personData } = getPersonItem(id || "", "images");
   const { data: MovieData, isLoading } = getPersonItem(id || "", "movie_credits");
 
-  console.log(MovieData);
 
   return (
     <div className="continer mt-[50px]">
@@ -43,9 +42,10 @@ const Person = () => {
           />
         ))}
       </div>
+
       <div className="mt-[80px]">
         <div className="">
-          <h1 className="ml-5 pb-4 text-[30px] font-bold">
+          <h1 className="ml-5 pb-4 text-[30px] font-bold dark:text-gray-300">
             {MovieData?.cast[0]?.character}{" "}
           </h1>
         </div>
@@ -54,9 +54,11 @@ const Person = () => {
         }
         <MovieView data={MovieData?.cast.slice(0, 20)} option={true} />
       </div>
+
+
       <div className={`mt-[50px] ${MovieData?.cast.length < 20 ? "hidden": ""}`}>
         <div className="">
-          <h1 className="ml-5 pb-4 text-[30px] font-bold">
+          <h1 className="ml-5 pb-4 text-[30px] font-bold dark:text-gray-300">
             {MovieData?.cast[1]?.character}{" "}
           </h1>
         </div>
@@ -65,6 +67,7 @@ const Person = () => {
           option={true}
         />
       </div>
+
     </div>
   );
 };
